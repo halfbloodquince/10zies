@@ -26,7 +26,17 @@ function App() {
   const [timerOn, setTimerOn] = useState(false)
   //buttons
   const [rulesOn, setRulesOn] = useState(false)
-    
+  // const [reset, setReset] = useState(false) 
+
+  
+  function resetButton() {
+    setDice(startingMessage())
+    setTime(0)
+    setTimerOn(false)
+    setTenzies(false)
+    setCount(0)
+  }
+
   useEffect(() => {
       let firstValue = dice[0].value
       if (dice.every(die => die.isHeld && die.value == firstValue)) {
@@ -154,10 +164,13 @@ function App() {
   }
 
 
+
+
   const diceValues = dice.map((die) => <Die count={count} value={die.value} key={die.id} isHeld={die.isHeld} holdDice={() => holdDice(die.id)} />)
 
   return (
     <div className="main">
+      {tenzies && <Confetti initialVelocityY={30} />}
       <Rules rulesOn={rulesOn} />
       <div className="container">
       <div className="inner--border">
@@ -173,9 +186,8 @@ function App() {
         </div>
         <div className="inner--main">
           <div className="title--box"><h4 className='title--text'>Tenzies</h4></div>
-          {/* <Rules /> */}
-        {tenzies && 
-                    <Confetti width={window.innerWidth} initialVelocityY={30} />}
+
+
           <div className="dice--grid">
             {diceValues}
           </div>
@@ -184,11 +196,6 @@ function App() {
         <div className="timer">
           <Clock time={time} topTime={topTime}/>
         </div>
-        {/* <div className="icons">
-          <img src={restart} alt="" />
-          <img src={scores} alt="" />
-          <img src={rules} alt="" />
-        </div> */}
 
       </div>
       <div className="buttons">
@@ -199,7 +206,7 @@ function App() {
             <img className='icon middle' src={scores} alt="" />
           </button>
           <button className="button--refresh">
-            <img className='icon right' src={restart} alt="" />
+            <img className='icon right' src={restart} onClick={resetButton} alt="" />
           </button>
         </div>
     </div>
