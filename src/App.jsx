@@ -142,7 +142,7 @@ function App() {
         <div className="inner--main">
           <div className="title--box"><h4 className='title--text'>Tenzies</h4></div>
         {tenzies && 
-                    <Confetti width="3000px" initialVelocityY={30} />}
+                    <Confetti width="2000px" initialVelocityY={30} />}
           <div className="dice--grid">
             {diceValues}
           </div>
