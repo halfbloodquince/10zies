@@ -7,6 +7,9 @@ import Confetti from 'react-confetti'
 import Clock from './components/Clock'
 import Rules from './components/Rules'
 
+import restart from "./images/restart.png"
+import rules from "./images/rules.png"
+import scores from "./images/scores.png"
 
 
 function App() {
@@ -21,6 +24,8 @@ function App() {
   //clock
   const [time, setTime] = useState(0)
   const [timerOn, setTimerOn] = useState(false)
+  //buttons
+  const [rulesOn, setRulesOn] = useState(false)
     
   useEffect(() => {
       let firstValue = dice[0].value
@@ -143,13 +148,29 @@ function App() {
   }
 }
 
+  function toggleRules() {
+    setRulesOn(rulesOn => !rulesOn) 
+    console.log(rulesOn)
+  }
+
 
   const diceValues = dice.map((die) => <Die count={count} value={die.value} key={die.id} isHeld={die.isHeld} holdDice={() => holdDice(die.id)} />)
 
   return (
     <div className="main">
- 
+      <Rules rulesOn={rulesOn} />
+      <div className="container">
       <div className="inner--border">
+      <div className="score">
+          <div className="score--1">
+            <div className="score--count">Count : </div>
+            <div className="count--1">{count}</div>
+          </div>
+          <div className="score--2">
+            <div className="topscore">Record Count : </div>
+            <div className="count--2">{topScore}</div>
+          </div>
+        </div>
         <div className="inner--main">
           <div className="title--box"><h4 className='title--text'>Tenzies</h4></div>
           {/* <Rules /> */}
@@ -160,21 +181,28 @@ function App() {
           </div>
           <button style={{backgroundColor: tenzies ? "#3b0e56" : "#8c3dbd"}} className='roll-dice' onClick={rollDice}>{tenzies ? "New Game" : count == 0 ? "Start" : "Roll"}</button>
         </div>
-        <div className="score">
-          <div className="score--1">
-            <div className="score--count">Count : </div>
-            <div className="count--1">{count}</div>
-          </div>
-          <div className="score--2">
-            <div className="topscore">Top Score : </div>
-            <div className="count--2">{topScore}</div>
-          </div>
-        </div>
         <div className="timer">
           <Clock time={time} topTime={topTime}/>
         </div>
+        {/* <div className="icons">
+          <img src={restart} alt="" />
+          <img src={scores} alt="" />
+          <img src={rules} alt="" />
+        </div> */}
+
       </div>
-      {/* <div className="scoreboard">Scoreboard</div> */}
+      <div className="buttons">
+          <button className="button--rules" onClick={toggleRules}>
+            <img className='icon left' src={rules} alt="" />
+          </button>
+          <button className="button--high--scores">
+            <img className='icon middle' src={scores} alt="" />
+          </button>
+          <button className="button--refresh">
+            <img className='icon right' src={restart} alt="" />
+          </button>
+        </div>
+    </div>
     </div>
   )
 }

@@ -49,6 +49,8 @@ body {
   justify-content: center;
   align-items: center;
   color:white;
+  position: relative;
+  z-index:2;
 
 }
 
@@ -61,7 +63,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top:20px;
+  margin-top:10px;
   margin-bottom:10px
 }
 
@@ -162,7 +164,8 @@ body {
 
 .score {
   width:100%;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 0px;
   font-family: 'Orbitron', sans-serif;
   display: flex;
   justify-content: space-between;
@@ -200,9 +203,93 @@ body {
     min-width: 140px;
     height:40px;
   }
+  .rules--container {
+    color:red;
+  }
 }
 
 .score--1, .score--2, .top--time, .new--time--count {
   display: flex;
+}
+
+.buttons {
+  width:100%;
+  margin-top:10px;
+  display: flex;
+  flex-flow: no-wrap;
+  justify-content: center;
+}
+
+
+/* .button--rules:hover, .button--high--scores:hover, .button--refresh:hover {
+  width:30%;
+  background-color: #aeadad;
+} */
+/* .button--rules {
+  width:40%;
+} */
+
+/* rules */
+
+.rules--container {
+  text-align: center;
+  font-size: 0.75rem;
+  width: 350px;
+  z-index: 2;
+  background-color: #010e16;
+  color:white;
+  padding:5px;
+  position:absolute;
+  top: 10%;
+}
+
+@media only screen and (max-width: 400px) {
+  .roll-dice {
+    font-size: 1rem;
+    width:40vw;
+    min-width: 140px;
+    height:40px;
+  }
+  .rules--container {
+    top: 5%;
+  }
+}
+
+/* .icons {
+  width:100%;
+  display: flex;
+  flex-flow: no-wrap;
+  justify-content: center;
+  gap:5px
+} */
+
+.buttons {
+  background-color: #010e16;
+  border: 1px solid rgb(39, 39, 39);
+  height: 45px;
+  margin-top:20px
+}
+
+.button--rules, .button--high--scores, .button--refresh {
+  background-color: #010e16;
+  border:none;
+  margin:none;
+  padding:5px;
+  width: 35%;
+}
+.icon {
+  filter: brightness(0) invert(0.7);
+  width: 24px;
+}
+
+.icon:hover {
+
+  filter: brightness(0) invert(1);
+  width:26px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
 }
 
