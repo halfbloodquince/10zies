@@ -136,6 +136,7 @@ function App() {
       if (count < topScore || topScore === "--") {
         localStorage.setItem("topscore", JSON.stringify(count))}
         setTopScore(count)
+        console.log("scorechange")
 
     }
   })
@@ -164,13 +165,11 @@ function App() {
 
   function toggleRules() {
     setRulesOn(rulesOn => !rulesOn) 
-    console.log(rulesOn)
   }
 
 
   function toggleScores() {
     setScoresOn(scoresOn => !scoresOn) 
-    console.log(scoresOn)
   }
 
 
@@ -178,9 +177,10 @@ function App() {
 
   return (
     <div className="main">
-      {tenzies && <Confetti initialVelocityY={30} />}
       <Rules rulesOn={rulesOn} />
       <Scores scoresOn={scoresOn} />
+
+      {tenzies && <Confetti width="2000px" height="2000px" initialVelocityY={30} />}
       <div className="container">
       <div className="inner--border">
       <div className="score">
@@ -189,7 +189,7 @@ function App() {
             <div className="count--1">{count}</div>
           </div>
           <div className="score--2">
-            <div className="topscore">Record Count : </div>
+            <div className="top--score">Record Count : </div>
             <div className="count--2">{topScore}</div>
           </div>
         </div>

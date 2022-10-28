@@ -3,7 +3,6 @@ import {motion} from "framer-motion"
 export default function Scores(props) {
 
     const scoresClick = !props.scoresOn ? 100 : 440
-    console.log(scoresClick)
 
     // repeatType:"reverse", repeat:1 not good with clicks
 
