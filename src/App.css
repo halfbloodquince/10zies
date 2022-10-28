@@ -243,17 +243,7 @@ body {
   top: 10%;
 }
 
-@media only screen and (max-width: 400px) {
-  .roll-dice {
-    font-size: 1rem;
-    width:40vw;
-    min-width: 140px;
-    height:40px;
-  }
-  .rules--container {
-    top: 5%;
-  }
-}
+
 
 /* .icons {
   width:100%;
@@ -267,7 +257,8 @@ body {
   background-color: #010e16;
   border: 1px solid rgb(39, 39, 39);
   height: 45px;
-  margin-top:20px
+  margin-top:20px;
+  z-index:2;
 }
 
 .button--rules, .button--high--scores, .button--refresh {
@@ -282,10 +273,18 @@ body {
   width: 24px;
 }
 
+.middle {
+  width: 30px;
+}
+
 .icon:hover {
 
   filter: brightness(0) invert(1);
   width:26px;
+}
+
+.middle:hover {
+  width: 33px;
 }
 
 .container {
@@ -293,3 +292,62 @@ body {
   flex-direction: column;
 }
 
+.scores--text{
+  color:#e8bfff;
+  z-index:1;
+}
+
+.scores--container {
+  text-align: center;
+  font-size: 0.75rem;
+  width: 300px;
+  z-index: 1;
+  background-color: #010e16;
+  color:white;
+  padding:5px;
+  position:absolute;
+  top: 30%;
+}
+
+.rules--text > p {
+  margin-top:20px;
+}
+
+@media only screen and (max-width: 500px) {
+  .roll-dice {
+    font-size: 1rem;
+    width:40vw;
+    min-width: 140px;
+    height:40px;
+  }
+  .rules--container {
+    top: 5%;
+  }
+
+  .rules--text > p {
+    margin-top:0px;
+  }
+  .scores--text > p {
+    font-size: 0.5rem;
+  }
+  .scores--container {
+    top: 25%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+
+  .rules--container {
+    top: 5%;
+  }
+
+  .rules--text > p {
+    margin-top:0px;
+  }
+  .scores--text > p {
+    font-size: 0.5rem;
+  }
+  .scores--container {
+    top: 20%;
+  }
+}

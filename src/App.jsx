@@ -6,6 +6,7 @@ import {nanoid} from "nanoid"
 import Confetti from 'react-confetti'
 import Clock from './components/Clock'
 import Rules from './components/Rules'
+import Scores from './components/Scores'
 
 import restart from "./images/restart.png"
 import rules from "./images/rules.png"
@@ -26,6 +27,7 @@ function App() {
   const [timerOn, setTimerOn] = useState(false)
   //buttons
   const [rulesOn, setRulesOn] = useState(false)
+  const [scoresOn, setScoresOn] = useState(false)
   // const [reset, setReset] = useState(false) 
 
   
@@ -35,6 +37,8 @@ function App() {
     setTimerOn(false)
     setTenzies(false)
     setCount(0)
+    setRulesOn(false)
+    setScoresOn(false)
   }
 
   useEffect(() => {
@@ -164,6 +168,10 @@ function App() {
   }
 
 
+  function toggleScores() {
+    setScoresOn(scoresOn => !scoresOn) 
+    console.log(scoresOn)
+  }
 
 
   const diceValues = dice.map((die) => <Die count={count} value={die.value} key={die.id} isHeld={die.isHeld} holdDice={() => holdDice(die.id)} />)
@@ -172,6 +180,7 @@ function App() {
     <div className="main">
       {tenzies && <Confetti initialVelocityY={30} />}
       <Rules rulesOn={rulesOn} />
+      <Scores scoresOn={scoresOn} />
       <div className="container">
       <div className="inner--border">
       <div className="score">
@@ -200,10 +209,10 @@ function App() {
       </div>
       <div className="buttons">
           <button className="button--rules" onClick={toggleRules}>
-            <img className='icon left' src={rules} alt="" />
+            <img style={rulesOn ? {filter:"invert(1)", width:"26px"} : {}} className='icon left' src={rules} alt="" />
           </button>
           <button className="button--high--scores">
-            <img className='icon middle' src={scores} alt="" />
+            <img style={scoresOn ? {filter:"invert(1)", width:"33px"} : {}} className='icon middle' src={scores} onClick={toggleScores} alt="" />
           </button>
           <button className="button--refresh">
             <img className='icon right' src={restart} onClick={resetButton} alt="" />
