@@ -5,6 +5,9 @@
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
+  height: 100%;
+  width: 100%;
+  background-color: #010e16;
 }
 
 
@@ -93,7 +96,7 @@ body {
 .roll-dice {
   background-color: #3b0e56;
   color:white;
-  width:140px;
+  width:160px;
   height:40px;
   border-radius: 3px;
   border: none;
