@@ -5,6 +5,7 @@ import Die from './components/Die'
 import {nanoid} from "nanoid"
 import Confetti from 'react-confetti'
 import Clock from './components/Clock'
+import Rules from './components/Rules'
 
 
 
@@ -151,6 +152,7 @@ function App() {
       <div className="inner--border">
         <div className="inner--main">
           <div className="title--box"><h4 className='title--text'>Tenzies</h4></div>
+          {/* <Rules /> */}
         {tenzies && 
                     <Confetti width={window.innerWidth} initialVelocityY={30} />}
           <div className="dice--grid">

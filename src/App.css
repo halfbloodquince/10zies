@@ -42,7 +42,7 @@ body {
 
 .inner--border {
   background-color: #0B2434;
-  height: 379px;
+  min-height: 379px;
   width:360px;
   display: flex;
   flex-direction: column;
@@ -53,8 +53,8 @@ body {
 }
 
 .inner--main {
-  width:320px;
-  height:320px;
+  width:340px;
+  height:360px;
   background-color: #F5F5F5;
   border-radius: 10px;
   display: flex;
