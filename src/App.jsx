@@ -159,8 +159,14 @@ function App() {
           <button style={{backgroundColor: tenzies ? "#3b0e56" : "#8c3dbd"}} className='roll-dice' onClick={rollDice}>{tenzies ? "New Game" : count == 0 ? "Start" : "Roll"}</button>
         </div>
         <div className="score">
-          <div className="score--count">Count: {count}</div>
-          <div className="topscore">Top Score: {topScore}</div>
+          <div className="score--1">
+            <div className="score--count">Count : </div>
+            <div className="count--1">{count}</div>
+          </div>
+          <div className="score--2">
+            <div className="topscore">Top Score : </div>
+            <div className="count--2">{topScore}</div>
+          </div>
         </div>
         <div className="timer">
           <Clock time={time} topTime={topTime}/>
