@@ -126,14 +126,16 @@ function App() {
   })
 
   function holdDice(id) {
+    if (count > 0){
     setDice(oldDice => oldDice.map((oldDie) => {
        return oldDie.id === id ? {...oldDie, isHeld: !oldDie.isHeld} : oldDie
        }
     ))
+  }
 }
 
 
-  const diceValues = dice.map((die) => <Die value={die.value} key={die.id} isHeld={die.isHeld} holdDice={() => holdDice(die.id)} />)
+  const diceValues = dice.map((die) => <Die count={count} value={die.value} key={die.id} isHeld={die.isHeld} holdDice={() => holdDice(die.id)} />)
 
   return (
     <div className="main">
