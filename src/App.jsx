@@ -10,7 +10,7 @@ import Rules from './components/Rules'
 
 
 function App() {
-
+//this is a test
   // localStorage.clear()
 
   const [dice, setDice] = useState(startingMessage())
