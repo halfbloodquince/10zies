@@ -12,18 +12,12 @@ function App() {
 
   // localStorage.clear()
 
-  const [dice, setDice] = useState(allNewDice())
-
+  const [dice, setDice] = useState(startingMessage())
   const [tenzies, setTenzies] = useState(false)
-
   const [count, setCount] = useState(0)
-
   const [topScore, setTopScore] = useState(JSON.parse(localStorage.getItem("topscore")) || "--")
-
   const [topTime, setTopTime] = useState(JSON.parse(localStorage.getItem("toptime")) || 0)
-
-//clock
-
+  //clock
   const [time, setTime] = useState(0)
   const [timerOn, setTimerOn] = useState(false)
     
@@ -62,6 +56,11 @@ function App() {
     //clean up function ^
   }, [timerOn])
 
+    useEffect(() => {
+      if (count == 0) {
+        setDice(startingMessage())
+      }
+    },[count])
 
 
 
@@ -73,9 +72,18 @@ function App() {
     }
 }
 
+  function startingMessage() {
+    const startWords = "PRESSSTART".split("")
+    const startingDice = []
+    for (let i=0; i<10; i++) {
+      startingDice.push({
+        value: startWords[i],
+        isHeld:false,
+        id: nanoid()
+      })
+    } return startingDice
+  }
 
-
-  
 
   function allNewDice() {
     const newDice = []
@@ -148,7 +156,7 @@ function App() {
           <div className="dice--grid">
             {diceValues}
           </div>
-          <button style={{backgroundColor: tenzies ? "#3b0e56" : "#8c3dbd"}} className='roll-dice' onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
+          <button style={{backgroundColor: tenzies ? "#3b0e56" : "#8c3dbd"}} className='roll-dice' onClick={rollDice}>{tenzies ? "New Game" : count == 0 ? "Start" : "Roll"}</button>
         </div>
         <div className="score">
           <div className="score--count">Count: {count}</div>

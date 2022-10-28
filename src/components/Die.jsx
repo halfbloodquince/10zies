@@ -5,11 +5,13 @@ export default function Die(props) {
 
 
 
-    const dieIsHeldStyle = { backgroundColor: props.isHeld ? "#59E391": "#FFFFFF"}
+    const dieIsHeldStyle = { backgroundColor: props.isHeld ? "#610094": props.count == 0 ? "#1C0C5B" : "#FFFFFF", 
+    color: props.isHeld || props.count == 0 ?  "#FFFFFF" : "black"}
+
 
     const startOfGame = props.count ==0 ? 0 : 180
 
-    const startingBackground = {backgroundColor: props.count == 0 && "#3a2c28"}
+    // const startingBackground = {color: props.count == 0 && "white"}
  
 
     return (
@@ -24,7 +26,7 @@ export default function Die(props) {
         scale: 1,
         rotate: 0,
       }} 
-        style={{...startingBackground, ...dieIsHeldStyle}} 
+        style={{...dieIsHeldStyle}} 
         className="die" 
         onClick={props.holdDice}>
         <h2 className="die--num">{props.value}</h2>
