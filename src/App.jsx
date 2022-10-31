@@ -20,7 +20,7 @@ function App() {
   const [dice, setDice] = useState(startingMessage())
   const [tenzies, setTenzies] = useState(false)
   const [count, setCount] = useState(0)
-  const [topScore, setTopScore] = useState(JSON.parse(localStorage.getItem("topscore")) || "--")
+  const [topScore, setTopScore] = useState(JSON.parse(localStorage.getItem("newscore")) || "--")
   const [topTime, setTopTime] = useState(JSON.parse(localStorage.getItem("toptime")) || 0)
   //clock
   const [time, setTime] = useState(0)
@@ -31,6 +31,8 @@ function App() {
   // const [reset, setReset] = useState(false) 
 
   
+
+
   function resetButton() {
     setDice(startingMessage())
     setTime(0)
@@ -79,6 +81,8 @@ function App() {
     useEffect(() => {
       if (count == 0) {
         setDice(startingMessage())
+        // setTenzies(false)
+        // setTopScore(JSON.parse(localStorage.getItem("newscore")))
       }
     },[count])
 
@@ -133,13 +137,16 @@ function App() {
 
   useEffect(() => {
     if (tenzies) { 
-      if (count < topScore || topScore === "--") {
-        localStorage.setItem("topscore", JSON.stringify(count))}
+      if (count < Number(topScore) || topScore === "--") {
+        localStorage.setItem("newscore", JSON.stringify(count))
         setTopScore(count)
-        console.log("scorechange")
+        console.log(`count:${count} is lower than topscore:${topScore} ` )}
 
+    } else if (count >= topScore) {
+      localStorage.setItem("newscore", JSON.stringify(topScore))
+      console.log(`count:${count} is higher than topscore:${topScore} ` )
     }
-  })
+  }, [tenzies])
 
   useEffect(() => {
     if (tenzies) {
