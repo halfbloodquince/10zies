@@ -2,13 +2,13 @@ import {motion} from "framer-motion"
 
 export default function Scores(props) {
 
-    const scoresClick = !props.scoresOn ? 100 : 440
+    const scoresClick = !props.scoresOn ? "25%" : "140%"
 
     // repeatType:"reverse", repeat:1 not good with clicks
 
     return (
         <motion.div  animate={{x: 0,y: scoresClick,scale: 1,rotate: 0,}} transition={{ ease: "easeOut", duration: 5,  } } 
-        initial={false} className="scores--container">
+        initial={false} className="scores--container" >
             <div className="scores--text">
                 <h2>High Scores</h2>
                 <p>MJW : 999</p>
@@ -24,3 +24,5 @@ export default function Scores(props) {
         </motion.div>
     )
 }
+
+// style={{color: props.scoresOn ? "#e8bfff" : "#010e16"}}
