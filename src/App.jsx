@@ -184,8 +184,10 @@ function App() {
 
   return (
     <div className="main">
-      <Rules rulesOn={rulesOn} />
-      <Scores scoresOn={scoresOn} />
+      <div className="features">
+        <Rules rulesOn={rulesOn} />
+        <Scores scoresOn={scoresOn} />
+      </div>
 
       {tenzies && <Confetti width="2000px" height="2000px" initialVelocityY={30} />}
       <div className="container">

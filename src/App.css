@@ -40,10 +40,10 @@ body {
   justify-content: space-around;
 }
 
-.topbox {
+/* .topbox {
   margin:0px;
   background-color: #010e16;
-  height: 190px;
+  height: 170px;
   width:360px;
 
 }
@@ -52,7 +52,7 @@ body {
   background-color: #010e16;
   height: 95px;
   width:360px;
-}
+} */
 
 .gapbox {
   background-color: #010e16;
@@ -252,18 +252,38 @@ body {
 
 /* rules */
 
+.features {
+  display: flex;
+  flex-direction: column;
+  background-color: #722a9c;
+  position:absolute;
+  align-items: center;
+
+}
+
 .rules--container {
   text-align: center;
   font-size: 0.75rem;
   width: 350px;
-  z-index: 2;
+  z-index: 1;
   background-color: #010e16;
   color:white;
   padding:5px;
-  position:absolute;
-  top: 10%;
+  position:relative;
+  /* top: 10%; */
 }
 
+.scores--container {
+  text-align: center;
+  font-size: 0.75rem;
+  width: 300px;
+  z-index: 1;
+  background-color: #010e16;
+  color:white;
+  padding:5px;
+  position:relative;
+  /* top: 30%; */
+}
 
 
 /* .icons {
@@ -318,17 +338,7 @@ body {
   z-index:1;
 }
 
-.scores--container {
-  text-align: center;
-  font-size: 0.75rem;
-  width: 300px;
-  z-index: 1;
-  background-color: #010e16;
-  color:white;
-  padding:5px;
-  position:absolute;
-  top: 30%;
-}
+
 
 .rules--text > p {
   margin-top:20px;
