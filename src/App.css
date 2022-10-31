@@ -40,6 +40,27 @@ body {
   justify-content: space-around;
 }
 
+.topbox {
+  margin:0px;
+  background-color: #010e16;
+  height: 190px;
+  width:360px;
+
+}
+
+.bottombox {
+  background-color: #010e16;
+  height: 95px;
+  width:360px;
+}
+
+.gapbox {
+  background-color: #010e16;
+  height: 20px;
+  width:360px;
+  z-index:1;
+}
+
 .inner--border {
   background-color: #0B2434;
   min-height: 379px;
@@ -204,7 +225,7 @@ body {
     height:40px;
   }
   .rules--container {
-    color:red;
+    /* color:red; */
   }
 }
 
@@ -257,8 +278,8 @@ body {
   background-color: #010e16;
   border: 1px solid rgb(39, 39, 39);
   height: 45px;
-  margin-top:20px;
   z-index:2;
+  margin: 0px;
 }
 
 .button--rules, .button--high--scores, .button--refresh {

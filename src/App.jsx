@@ -189,6 +189,7 @@ function App() {
 
       {tenzies && <Confetti width="2000px" height="2000px" initialVelocityY={30} />}
       <div className="container">
+      <div className="topbox"></div>
       <div className="inner--border">
       <div className="score">
           <div className="score--1">
@@ -214,6 +215,7 @@ function App() {
         </div>
 
       </div>
+      <div className="gapbox"></div>
       <div className="buttons">
           <button className="button--rules" onClick={toggleRules}>
             <img style={rulesOn ? {filter:"invert(1)", width:"26px"} : {}} className='icon left' src={rules} alt="" />
@@ -225,6 +227,7 @@ function App() {
             <img className='icon right' src={restart} onClick={resetButton} alt="" />
           </button>
         </div>
+        <div className="bottombox"></div>
     </div>
     </div>
   )
