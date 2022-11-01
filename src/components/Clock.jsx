@@ -17,7 +17,7 @@ export default function Clock(props) {
                 <div className="best--time">
                     <span className="min">{props.topTime ===0 ? "--" : ("0" + Math.floor((props.topTime / 60000)%60)).slice(-2)} : </span>
                     <span className="sec">{props.topTime ===0 ? "--" : ("0" + Math.floor((props.topTime / 1000)%60)).slice(-2)} : </span>
-                    <span className="ms">{props.topTime ===0 ? "--" : ("0" + ((props.topTime / 10)%100)).slice(-2)}</span>
+                    <span className="ms">{props.topTime ===0 ? "--" : ("0" + Math.floor((props.topTime / 10)%100)).slice(-2)}</span>
                 </div>
             </div>
         </div>

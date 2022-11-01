@@ -59,11 +59,12 @@ function App() {
     }
     else if (tenzies) {
       setTimerOn(false)
+      let finalTime = time
     }
     else if (count===0) {
       setTime(0)
     }
-  })
+  }, )
 
   useEffect(() => {
     let interval = null;
@@ -85,7 +86,7 @@ function App() {
     if (tenzies) {
       setAllScores(old => [...old, time].sort(function(a, b) {return a - b}))
     }
-  },[tenzies])
+  },[timerOn])
 
   useEffect(() => {
     localStorage.setItem("allscores", JSON.stringify(allScores))
@@ -158,9 +159,7 @@ function App() {
         setTopScore(count)
         }
 
-    } else if (count >= topScore) {
-      localStorage.setItem("newscore", JSON.stringify(topScore))
-    }
+    } 
   }, [tenzies])
 
   useEffect(() => {
@@ -174,7 +173,7 @@ function App() {
         setTopTime(time)
       }
     }
-  })
+  }, [timerOn])
 
 
 
@@ -198,7 +197,7 @@ function App() {
   }
 
   let innerWidth = window.innerWidth
-  let innerHeight = 1.3 * window.innerHeight
+  let innerHeight = 1.5 * window.innerHeight
 
 
   const diceValues = dice.map((die) => <Die count={count} value={die.value} key={die.id} isHeld={die.isHeld} delay={die.delay} holdDice={() => holdDice(die.id)} />)
