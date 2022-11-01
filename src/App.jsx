@@ -191,7 +191,7 @@ function App() {
         <Scores scoresOn={scoresOn} />
       </div>
 
-      {tenzies && <Confetti width="2000px" height="2000px" initialVelocityY={30} />}
+      {tenzies && <Confetti width="2500px" height="2000px" initialVelocityY={30} />}
       <div className="container">
       <div className="inner--border">
       <div className="score">
