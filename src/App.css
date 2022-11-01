@@ -11,6 +11,12 @@ body {
   margin:0;
 }
 
+.container {
+  /* position:absolute; */
+  display: flex;
+  flex-direction: column;
+  /* transform: translate(0%, -50%); */
+}
 
 .main {
   height: 130vh;
@@ -21,6 +27,7 @@ body {
   justify-content: center;
   align-items: center;
   border:none;
+  transform: translate(0%, -10%);
 }
 
 .scoreboard {
@@ -254,7 +261,7 @@ body {
 .features {
   display: flex;
   flex-direction: column;
-  background-color: #722a9c;
+  background-color: #010e16;
   position:absolute;
   align-items: center;
 
@@ -329,10 +336,7 @@ body {
   width: 33px;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-}
+
 
 .scores--text{
   color:#e8bfff;

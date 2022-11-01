@@ -191,7 +191,6 @@ function App() {
 
       {tenzies && <Confetti width="2000px" height="2000px" initialVelocityY={30} />}
       <div className="container">
-      <div className="topbox"></div>
       <div className="inner--border">
       <div className="score">
           <div className="score--1">
@@ -229,7 +228,6 @@ function App() {
             <img className='icon right' src={restart} onClick={resetButton} alt="" />
           </button>
         </div>
-        <div className="bottombox"></div>
     </div>
     </div>
   )
