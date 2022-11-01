@@ -7,7 +7,7 @@ export default function Scores(props) {
     // repeatType:"reverse", repeat:1 not good with clicks
 
     return (
-        <motion.div  animate={{x: 0,y: scoresClick,scale: 1,rotate: 0,}} transition={{ ease: "easeOut", duration: 5,  } } 
+        <motion.div  animate={{x: 0,y: scoresClick,scale: 1,rotate: 0,}} transition={{ ease: "easeOut", duration: 2,  } } 
         initial={false} className="scores--container" >
             <div className="scores--text">
                 <h2>High Scores</h2>

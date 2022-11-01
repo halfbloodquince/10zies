@@ -19,7 +19,7 @@ body {
 }
 
 .main {
-  height: 110vh;
+  height: 125vh;
   width: 100vw;
   min-height: 300px;
   background-color: #010e16;
@@ -27,7 +27,8 @@ body {
   justify-content: center;
   align-items: center;
   border:none;
-  /* transform: translate(0%, -10%); */
+  transform: translate(0%, -5%);
+  overflow: visible;
 }
 
 /* .confetti--container {
@@ -285,6 +286,7 @@ body {
   color:white;
   padding:5px;
   position:relative;
+  overflow: scroll;
   /* overflow: hidden; */
   /* overflow-y:visible; */
   /* top: 10%; */
@@ -355,7 +357,7 @@ body {
 
 
 .rules--text > p {
-  margin-top:20px;
+  margin-top:5px;
 }
 
 @media only screen and (max-width: 500px) {
