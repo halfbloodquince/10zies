@@ -270,6 +270,7 @@ body {
   color:white;
   padding:5px;
   position:relative;
+  overflow: scroll;
   /* top: 10%; */
 }
 
@@ -351,7 +352,7 @@ body {
     min-width: 140px;
     height:40px;
   }
-  .rules--container {
+  /* .rules--container {
     top: 5%;
   }
 
@@ -364,9 +365,9 @@ body {
   .scores--container {
     top: 25%;
   }
-}
+} */
 
-@media only screen and (max-width: 700px) {
+/* @media only screen and (max-width: 700px) {
 
   .rules--container {
     top: 5%;
@@ -381,4 +382,4 @@ body {
   .scores--container {
     top: 20%;
   }
-}
+} */
