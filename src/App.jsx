@@ -195,8 +195,11 @@ function App() {
 
   const diceValues = dice.map((die) => <Die count={count} value={die.value} key={die.id} isHeld={die.isHeld} delay={die.delay} holdDice={() => holdDice(die.id)} />)
 
+
+  // style= {{minHeight: scoresOn || rulesOn ? "900px" : "300px"}}
+
   return (
-    <div className="main" style= {{minHeight: scoresOn || rulesOn ? "900px" : "300px"}}>
+    <div className="main" >
       <div className="features">
         <Rules rulesOn={rulesOn} />
         <Scores scoresOn={scoresOn} />
