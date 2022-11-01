@@ -21,11 +21,11 @@ export default function Scores(props) {
         initial={false} className="scores--container" >
             <div className="scores--text">
                 <h4>Fastest Times</h4>
-                <p>1 - MJW - {props.allScores.length > 0 ? timeConverter(props.allScores[0]) : "99:99:99"}</p>
-                <p>2 - MJW - {props.allScores.length > 1 ? timeConverter(props.allScores[1]) : "99:99:99"}</p>
-                <p>3 - MJW - {props.allScores.length > 2 ? timeConverter(props.allScores[2]) : "99:99:99"}</p>
-                <p>4 - MJW - {props.allScores.length > 3 ? timeConverter(props.allScores[3]) : "99:99:99"}</p>
-                <p>5 - MJW - {props.allScores.length > 4 ? timeConverter(props.allScores[4]) : "99:99:99"}</p>
+                <p>1 - {props.allScores.length > 0 ? timeConverter(props.allScores[0]) : "99:99:99"}</p>
+                <p>2 - {props.allScores.length > 1 ? timeConverter(props.allScores[1]) : "99:99:99"}</p>
+                <p>3 - {props.allScores.length > 2 ? timeConverter(props.allScores[2]) : "99:99:99"}</p>
+                <p>4 - {props.allScores.length > 3 ? timeConverter(props.allScores[3]) : "99:99:99"}</p>
+                <p>5 - {props.allScores.length > 4 ? timeConverter(props.allScores[4]) : "99:99:99"}</p>
 
             </div>
         </motion.div>

@@ -81,8 +81,19 @@ function App() {
 
   // const scrollBox = document.getElementByClassName("container")
 
+  useEffect(() => {
+    if (tenzies) {
+      console.log("TENZIES")
+      console.log(allScores)
+      console.log(time)
+      setAllScores(old => [...old, time].sort(function(a, b) {return a - b}))
+    }
+  },[tenzies])
 
-
+  useEffect(() => {
+    console.log(allScores)
+    localStorage.setItem("allscores", JSON.stringify(allScores))
+  },[allScores])
 
 
     useEffect(() => {
@@ -95,7 +106,6 @@ function App() {
         // scrollBox.scrollIntoView()
       }
     },[count])
-
 
 
 
@@ -176,19 +186,6 @@ function App() {
 
 
 
-  useEffect(() => {
-    if (tenzies) {
-
-
-      setAllScores(oldScores => [...oldScores, time].sort(function(a, b) {
-            return a - b}))
-    
-      localStorage.setItem("allscores", JSON.stringify(allScores))
-      console.log(allScores)
-    }
-    localStorage.setItem("allscores", JSON.stringify(allScores))
-    console.log(JSON.parse(localStorage.getItem("allscores")))
-  }, [tenzies])
 
   function holdDice(id) {
     if (count > 0){
@@ -209,7 +206,7 @@ function App() {
   }
 
   let innerWidth = window.innerWidth
-  let innerHeight = 1.1 * window.innerHeight
+  let innerHeight = 1.3 * window.innerHeight
 
 
   const diceValues = dice.map((die) => <Die count={count} value={die.value} key={die.id} isHeld={die.isHeld} delay={die.delay} holdDice={() => holdDice(die.id)} />)
