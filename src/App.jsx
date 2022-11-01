@@ -22,6 +22,7 @@ function App() {
   const [count, setCount] = useState(0)
   const [topScore, setTopScore] = useState(JSON.parse(localStorage.getItem("newscore")) || "--")
   const [topTime, setTopTime] = useState(JSON.parse(localStorage.getItem("toptime")) || 0)
+  const [allScores, setAllScores] = useState(JSON.parse(localStorage.getItem("allscores")) || [])
   //clock
   const [time, setTime] = useState(0)
   const [timerOn, setTimerOn] = useState(false)
@@ -48,7 +49,6 @@ function App() {
       if (dice.every(die => die.isHeld && die.value == firstValue)) {
         setTenzies(true)
       }
-      console.log(window.innerWidth);
 
   }, [dice])
 
@@ -82,9 +82,13 @@ function App() {
   // const scrollBox = document.getElementByClassName("container")
 
 
+
+
+
     useEffect(() => {
       if (count == 0) {
         setDice(startingMessage())
+
         // setTenzies(false)
         // setTopScore(JSON.parse(localStorage.getItem("newscore")))
         // console.log(scrollBox)
@@ -150,11 +154,10 @@ function App() {
       if (count < Number(topScore) || topScore === "--") {
         localStorage.setItem("newscore", JSON.stringify(count))
         setTopScore(count)
-        console.log(`count:${count} is lower than topscore:${topScore} ` )}
+        }
 
     } else if (count >= topScore) {
       localStorage.setItem("newscore", JSON.stringify(topScore))
-      console.log(`count:${count} is higher than topscore:${topScore} ` )
     }
   }, [tenzies])
 
@@ -170,6 +173,22 @@ function App() {
       }
     }
   })
+
+
+
+  useEffect(() => {
+    if (tenzies) {
+
+
+      setAllScores(oldScores => [...oldScores, time].sort(function(a, b) {
+            return a - b}))
+    
+      localStorage.setItem("allscores", JSON.stringify(allScores))
+      console.log(allScores)
+    }
+    localStorage.setItem("allscores", JSON.stringify(allScores))
+    console.log(JSON.parse(localStorage.getItem("allscores")))
+  }, [tenzies])
 
   function holdDice(id) {
     if (count > 0){
@@ -202,7 +221,7 @@ function App() {
     <div className="main" >
       <div className="features">
         <Rules rulesOn={rulesOn} />
-        <Scores scoresOn={scoresOn} />
+        <Scores scoresOn={scoresOn} allScores={allScores} />
       </div>
       <div className='confetti--container'>
         {tenzies && <Confetti width={innerWidth} height={innerHeight} initialVelocityY={30} />}

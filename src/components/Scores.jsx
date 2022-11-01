@@ -9,7 +9,6 @@ export default function Scores(props) {
         let secs = ("0" + Math.floor((time / 1000)%60)).slice(-2)
         let ms = ("0" + ((time / 10)%100)).slice(-2)
 
-        console.log((JSON.parse(localStorage.getItem("newscore"))))
         return `${mins}:${secs}:${ms}`
     }
 
@@ -22,11 +21,11 @@ export default function Scores(props) {
         initial={false} className="scores--container" >
             <div className="scores--text">
                 <h4>Fastest Times</h4>
-                <p>1 - MJW - {timeConverter(JSON.parse(localStorage.getItem("toptime")))}</p>
-                <p>2 - MJW - 00:12:55</p>
-                <p>3 - MJW - 00:21:11</p>
-                <p>4 - MJW - 00:25:35</p>
-                <p>5 - MJW - 00:38:21</p>
+                <p>1 - MJW - {props.allScores.length > 0 ? timeConverter(props.allScores[0]) : "99:99:99"}</p>
+                <p>2 - MJW - {props.allScores.length > 1 ? timeConverter(props.allScores[1]) : "99:99:99"}</p>
+                <p>3 - MJW - {props.allScores.length > 2 ? timeConverter(props.allScores[2]) : "99:99:99"}</p>
+                <p>4 - MJW - {props.allScores.length > 3 ? timeConverter(props.allScores[3]) : "99:99:99"}</p>
+                <p>5 - MJW - {props.allScores.length > 4 ? timeConverter(props.allScores[4]) : "99:99:99"}</p>
 
             </div>
         </motion.div>
