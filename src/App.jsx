@@ -79,13 +79,20 @@ function App() {
     //clean up function ^
   }, [timerOn])
 
+  // const scrollBox = document.getElementByClassName("container")
+
+
     useEffect(() => {
       if (count == 0) {
         setDice(startingMessage())
         // setTenzies(false)
         // setTopScore(JSON.parse(localStorage.getItem("newscore")))
+        // console.log(scrollBox)
+        // scrollBox.scrollIntoView()
       }
     },[count])
+
+
 
 
 
