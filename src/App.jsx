@@ -92,7 +92,8 @@ function App() {
     return {
         value: Math.ceil(Math.random() * 6),
         isHeld: false,
-        id: nanoid()
+        id: nanoid(),
+        delay:0
     }
 }
 
@@ -103,7 +104,8 @@ function App() {
       startingDice.push({
         value: startWords[i],
         isHeld:false,
-        id: nanoid()
+        id: nanoid(),
+        delay: 0.04*i
       })
     } return startingDice
   }
@@ -180,7 +182,7 @@ function App() {
   }
 
 
-  const diceValues = dice.map((die) => <Die count={count} value={die.value} key={die.id} isHeld={die.isHeld} holdDice={() => holdDice(die.id)} />)
+  const diceValues = dice.map((die) => <Die count={count} value={die.value} key={die.id} isHeld={die.isHeld} delay={die.delay} holdDice={() => holdDice(die.id)} />)
 
   return (
     <div className="main">
