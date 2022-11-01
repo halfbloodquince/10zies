@@ -48,6 +48,7 @@ function App() {
       if (dice.every(die => die.isHeld && die.value == firstValue)) {
         setTenzies(true)
       }
+      console.log(window.innerWidth);
 
   }, [dice])
 
@@ -181,6 +182,9 @@ function App() {
     setScoresOn(scoresOn => !scoresOn) 
   }
 
+  let innerWidth = window.innerWidth
+  let innerHeight = 1.1 * window.innerHeight
+
 
   const diceValues = dice.map((die) => <Die count={count} value={die.value} key={die.id} isHeld={die.isHeld} delay={die.delay} holdDice={() => holdDice(die.id)} />)
 
@@ -190,8 +194,9 @@ function App() {
         <Rules rulesOn={rulesOn} />
         <Scores scoresOn={scoresOn} />
       </div>
-
-      {tenzies && <Confetti width="2500px" height="2000px" initialVelocityY={30} />}
+      <div className='confetti--container'>
+        {tenzies && <Confetti width={innerWidth} height={innerHeight} initialVelocityY={30} />}
+      </div>
       <div className="container">
       <div className="inner--border">
       <div className="score">

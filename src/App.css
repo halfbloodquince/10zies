@@ -30,6 +30,13 @@ body {
   /* transform: translate(0%, -10%); */
 }
 
+/* .confetti--container {
+  position: absolute;
+  height: 110vh;
+  width: 100vw;
+  background-color: red;
+} */
+
 .scoreboard {
   background-color: rgb(42, 17, 70);
   color:white;
