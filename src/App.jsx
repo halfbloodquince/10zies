@@ -83,15 +83,11 @@ function App() {
 
   useEffect(() => {
     if (tenzies) {
-      console.log("TENZIES")
-      console.log(allScores)
-      console.log(time)
       setAllScores(old => [...old, time].sort(function(a, b) {return a - b}))
     }
   },[tenzies])
 
   useEffect(() => {
-    console.log(allScores)
     localStorage.setItem("allscores", JSON.stringify(allScores))
   },[allScores])
 
@@ -100,10 +96,6 @@ function App() {
       if (count == 0) {
         setDice(startingMessage())
 
-        // setTenzies(false)
-        // setTopScore(JSON.parse(localStorage.getItem("newscore")))
-        // console.log(scrollBox)
-        // scrollBox.scrollIntoView()
       }
     },[count])
 
