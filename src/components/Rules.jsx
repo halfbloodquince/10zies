@@ -5,7 +5,7 @@ export default function Rules(props) {
     const buttonClick = props.rulesOn ? "-150%" : "-30%"
 
     return (
-        <motion.div  animate={{xlinkRole: 0,y: buttonClick,scale: 1,rotate: 0,}} transition={{ ease: "easeOut", duration: 5 }} 
+        <motion.div  animate={{xlinkRole: 0,y: buttonClick,scale: 1,rotate: 0,}} transition={{ ease: "easeOut", duration: 3 }} 
         initial={false} className="rules--container">
             <div className="rules--text">
                 <p>Roll until all numbers are the same.</p>
