@@ -358,6 +358,7 @@ body {
 
 .rules--text > p {
   margin-top:5px;
+  color:#e8e0ed
 }
 
 @media only screen and (max-width: 500px) {
