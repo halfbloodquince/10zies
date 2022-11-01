@@ -15,7 +15,7 @@ body {
 .main {
   height: 130vh;
   width: 100vw;
-  min-height: 700px;
+  min-height: 800px;
   background-color: #010e16;
   display: flex;
   justify-content: center;
