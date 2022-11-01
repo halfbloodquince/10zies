@@ -2,7 +2,7 @@ import {motion} from "framer-motion"
 
 export default function Rules(props) {
 
-    const buttonClick = props.rulesOn ? "-220%" : "-30%"
+    const buttonClick = props.rulesOn ? "-150%" : "-30%"
 
     return (
         <motion.div  animate={{xlinkRole: 0,y: buttonClick,scale: 1,rotate: 0,}} transition={{ ease: "easeOut", duration: 3 }} 
